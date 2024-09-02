@@ -1,0 +1,12 @@
+.newsboxWrapper {
+    background: linear-gradient(180deg, hsla(144, 89%, 22%, 1) 4%, hsla(0, 0%, 100%, 1) 100%);
+    height: 80vh;
+  
+    img {
+      width: 50%;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 100%);
+    }
+  }
+  

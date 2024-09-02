@@ -1,0 +1,37 @@
+.loginWrapper {
+    background: linear-gradient(180deg, hsla(144, 89%, 22%, 1) 4%, hsla(0, 0%, 100%, 1) 100%);
+    height: 80vh;
+    .loginBox {
+        background: linear-gradient(180deg, hsla(130, 30%, 88%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+        width: 80%;
+        margin: auto;
+        height: 80vh;
+        padding: 5%;
+        h2 {
+            margin-bottom: 3%;
+        }
+        input {
+            width: 490px;
+            padding: 12px;
+            margin-bottom: 25px;
+            border: none;
+            border-radius: 5px;
+
+        }
+        .assets {
+            color: #119B1E;
+        }
+    }
+    .loginContainer {
+        display: flex;
+        justify-content: end;
+        width: 46%;
+        button {
+            padding: 7px 57px 7px 57px;
+            background-color: #119B1E;
+            border-radius: 4px;
+            text-transform: uppercase;
+            border: none;
+        }
+    }
+}

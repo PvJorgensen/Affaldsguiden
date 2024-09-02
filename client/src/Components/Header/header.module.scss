@@ -1,0 +1,23 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #677D6A;
+    .logoContainer {
+        margin-left: -12%;
+        margin-top: 2%;
+    }
+    .btnContainer {
+        margin-right: -12%;
+        margin-top: 2%;
+        a {
+            background-color: #D8EADB;
+            padding: 4px 15px 4px 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: black;
+        }
+    }
+}
