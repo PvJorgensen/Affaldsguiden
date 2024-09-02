@@ -1,29 +1,36 @@
 .navMain {
-    ul {
-      display: flex;
-      justify-content: center;
-      li {
-        border-right: 1px solid #677D6A;
-        text-align: center;
-  
-        a {
-          color: black;
-          text-transform: uppercase;
-          max-width: 247px;
-          padding: 19px 48px;
-          display: block;
-          transition: background-color 0.3s ease;
-          
-          &:hover {
-            background-color: #D6BD98;
-          }
+  ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      border-right: 1px solid #677D6A;
+      text-align: center;
+
+      a {
+        color: black;
+        text-transform: uppercase;
+        max-width: 247px;
+        padding: 19px 48px;
+        display: block;
+        transition: background-color 0.3s ease;
         
+        &:hover {
+          background-color: #D6BD98;
+        }
+        
+        // Optionally add styles for the active link if not using inline style
+        &.active {
+          background-color: #D6BD98;
         }
       }
-  
-      li:first-of-type {
-        border-left: 1px solid #677D6A;
-      }
+    }
+
+    li:first-of-type {
+      border-left: 1px solid #677D6A;
     }
   }
-  
+}

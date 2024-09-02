@@ -7,46 +7,45 @@ export const Nav = () => {
     <nav className={styles.navMain}>
       <ul>
         <li>
-          <NavLink 
-            exact 
-            to='/' 
-            activeClassName={styles.active} 
+          <NavLink
+            to='/'
+            className={({ isActive }) => isActive ? styles.active : undefined}
             style={({ isActive }) => isActive ? { backgroundColor: '#D6BD98' } : {}}
           >
             Forside
           </NavLink>
         </li>
         <li>
-          <NavLink 
-            to='/Sorteringsguide' 
-            activeClassName={styles.active} 
+          <NavLink
+            to='/Sorteringsguide'
+            className={({ isActive }) => isActive ? styles.active : undefined}
             style={({ isActive }) => isActive ? { backgroundColor: '#D6BD98' } : {}}
           >
             Sorteringsguide
           </NavLink>
         </li>
         <li>
-          <NavLink 
-            to='/Genbrugsstaioner' 
-            activeClassName={styles.active} 
+          <NavLink
+            to='/Genbrugsstaioner'
+            className={({ isActive }) => isActive ? styles.active : undefined}
             style={({ isActive }) => isActive ? { backgroundColor: '#D6BD98' } : {}}
           >
             Genbrugsstaioner
           </NavLink>
         </li>
         <li>
-          <NavLink 
-            to='/Artikler' 
-            activeClassName={styles.active} 
+          <NavLink
+            to='/Artikler'
+            className={({ isActive }) => isActive ? styles.active : undefined}
             style={({ isActive }) => isActive ? { backgroundColor: '#D6BD98' } : {}}
           >
             Artikler
           </NavLink>
         </li>
         <li>
-          <NavLink 
-            to='/Bestil' 
-            activeClassName={styles.active} 
+          <NavLink
+            to='/Bestil'
+            className={({ isActive }) => isActive ? styles.active : undefined}
             style={({ isActive }) => isActive ? { backgroundColor: '#D6BD98' } : {}}
           >
             Bestil Container

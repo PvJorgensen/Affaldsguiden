@@ -50,8 +50,8 @@ export const Logon = () => {
           <div className={styles.loginContainer}>
             <button type="submit">LOGIN</button>
           </div>
-          <div className={styles.assets}>
-                <p>Opret ny bruger</p>
+            <div className={styles.assets}>
+                <p>Opret en bruger</p>
                 <p>Glemt password</p>
             </div>
           </section>
