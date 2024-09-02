@@ -1,0 +1,33 @@
+.tipsBox {
+    margin-top: 50%;
+    width: 60%;
+    margin: auto;
+    box-shadow: 1px 5px 10px lightgray;
+    display: grid;
+    grid-template-columns: 1fr 1.7fr;
+    max-height: 700px;
+    margin-bottom: 5%;
+    .imgWrapper {
+        img {
+            width: 100%;
+        }
+    }
+    .right {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+    .topText {
+        padding: 40px;
+        color: #119B1E;
+        margin-top: 4%;
+    }
+    .botText {
+        padding: 40px;
+        h2 {
+            margin-bottom: 5%;
+        }
+        span {
+            color: #119B1E;
+        }
+    }
+}

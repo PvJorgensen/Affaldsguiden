@@ -1,6 +1,12 @@
 .footer {
     background-image: url(../../assets//Images//FooterBg.png);
     background-repeat: no-repeat;
-    height: 40vh;
+    height: auto;
     background-size: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+    section {
+        padding: 100px;
+    }
 }

@@ -1,10 +1,21 @@
 import React from 'react'
 import styles from './footer.module.scss'
-
+import Apps from '../../assets/Images/AppStores.png'
+import some from '../../assets/Images/SocialMedias.png'
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem illum deleniti dicta nihil natus. Possimus corrupti quibusdam deserunt atque asperiores labore similique perspiciatis obcaecati, temporibus sunt error voluptates, tempore nobis.</p>
+      <section>
+          <h3>Affaldsguiden</h3>
+          <p>Øster Uttrupvej 1A</p>
+          <p>9000 Aalborg</p>
+      </section>
+      <section>
+          <img src={Apps} alt="" />
+      </section>
+      <section>
+          <img src={some} alt="" />
+      </section>
     </footer>
   )
 }

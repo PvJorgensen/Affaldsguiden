@@ -1,0 +1,25 @@
+.banner {
+    background-color: #D8EADB;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-height: 400px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    .textWrapper {
+        margin-left: 53%;
+        width: 100%;
+    }
+    span{
+        color: #119B1E;
+    }
+    .arrow {
+        margin-top: 15%;
+    }
+    .imgWrapper {
+        margin: auto;
+        img {
+            max-width: 500px;
+        }
+    }
+}
