@@ -1,0 +1,18 @@
+.stations {
+    width: 100%;
+    margin: auto;
+    gap: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding:  40px 60px 0px  60px;
+    .stationWrapper {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        background-color: white;
+        box-shadow: 1px 5px 10px lightgray;
+        max-height: 400px;
+        img {
+            width: 100%;
+        }
+    }
+}

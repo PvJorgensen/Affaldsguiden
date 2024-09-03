@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './contentwrapper.module.scss'
 
 export const ContentWrapper = ({title, subtitle, description, children}) => {
     document.title = title;
@@ -10,9 +11,13 @@ export const ContentWrapper = ({title, subtitle, description, children}) => {
     }
   return (
     <>
-    {/* <h1>{title}</h1> */}
-    {subtitle && <h3>{subtitle}</h3>}
+    <div className={styles.contentWrapper}>
+      <div className={styles.contentHolder}>
+    <h1>{title}</h1>
+    {subtitle && <h2 className={styles.subTitle}>{subtitle}</h2>}
     <div>{children}</div>
+      </div>
+    </div>
     </>
   )
 }

@@ -3,6 +3,7 @@
   height: 80vh;
   position: relative; 
   padding: 0;
+
   img {
     width: 100%; 
     max-width: 80%; 
@@ -35,10 +36,34 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    h3 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+
+      .firstWord {
+        margin-right: 5px;
+        
+        &::after {
+          content: '-';
+          margin-left: 5px;
+        }
+      }
+
+      .restTitle {
+        display: block;
+        width: 100%;
+        margin-top: 0.5rem;
+        color: #119B1E;
+      }
+    }
+
     p {
       margin-top: 10px;
       margin-bottom: 50px;
     }
+
     img {
       width: 5%;
       margin-left: 0;

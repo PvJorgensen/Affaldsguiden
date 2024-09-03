@@ -33,15 +33,19 @@ export const NewsBox = () => {
       <section className={styles.newsboxWrapper}>
         <img src={backgroundImg} alt="Background" className={styles.backgroundImage} />
         <div className={styles.articleWrapper}>
-          {articles &&
-            articles.slice(0, 2).map((item) => (
-              <section key={item.id} className={styles.articleSection}>
-                <h3>{item.title}</h3>
+        {articles && articles.slice(0, 2).map((item) => {
+        const [firstWord, ...rest] = item.title.split(' ');
+          return (
+            <section key={item.id} className={styles.articleSection}>
+              <h3>
+                <span className={styles.firstWord}>{firstWord}</span>
+                <span className={styles.restTitle}>{rest.join(' ')}</span>
+              </h3>
                 <p>{item.teaser}</p>
-                <NavLink to="/Artikler"><img src={arrow} alt="" /></NavLink>
-              </section>
-            ))
-          }
+                  <NavLink to="/Artikler"><img src={arrow} alt="" /></NavLink>
+        </section>
+  );
+})}
         </div>
       </section>
     </>

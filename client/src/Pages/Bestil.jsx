@@ -1,7 +1,10 @@
 import React from 'react'
+import { ContentWrapper } from '../Components/ContentWrapper/ContentWrapper'
 
 export const Bestil = () => {
   return (
-    <div>Bestil</div>
+    <ContentWrapper title="Bestil affaldscontainer">
+
+    </ContentWrapper>
   )
 }

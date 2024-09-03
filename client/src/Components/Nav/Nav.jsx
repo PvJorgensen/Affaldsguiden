@@ -26,7 +26,7 @@ export const Nav = () => {
         </li>
         <li>
           <NavLink
-            to='/Genbrugsstaioner'
+            to='/Genbrugsstationer'
             className={({ isActive }) => isActive ? styles.active : undefined}
             style={({ isActive }) => isActive ? { backgroundColor: '#D6BD98' } : {}}
           >

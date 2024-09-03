@@ -6,16 +6,15 @@ import { Bestil } from '../../Pages/Bestil';
 import { Login } from '../../Pages/Login';
 import { Sorteringsguide } from '../../Pages/Sorteringsguide';
 
-
 export const AppRouter = () => {
     return (
       <Routes>
           <Route index element={<Forside />} />
-          <Route path='/Sorteringsguide' element={<Sorteringsguide />}></Route>
-          <Route path='/Genbrugsstationer' element={<Genbrugsstation />}></Route>
-          <Route path='/Artikler' element={<Artikler />}></Route>
-          <Route path='/Bestil' element={<Bestil />}></Route>
-          <Route path='/Login' element={<Login />}></Route>
+          <Route path='/Sorteringsguide' element={<Sorteringsguide />} />
+          <Route path='/Genbrugsstationer' element={<Genbrugsstation />} />
+          <Route path='/Artikler' element={<Artikler />} />
+          <Route path='/Bestil' element={<Bestil />} />
+          <Route path='/Login' element={<Login />} />
       </Routes>
     );
-  };
+};
