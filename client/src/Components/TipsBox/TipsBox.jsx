@@ -2,6 +2,7 @@ import React from 'react'
 import sortering from '../../assets/Images/affaldssortering-1.jpg'
 import arrow from '../../assets/Arrow.png'
 import styles from './tips.module.scss'
+import { NavLink } from 'react-router-dom'
 
 export const TipsBox = () => {
   return (
@@ -15,7 +16,9 @@ export const TipsBox = () => {
         </div>
         <div className={styles.botText}>
             <h2>Tips og tricks til at <br /><span>sortere dit affald</span></h2>
+            <NavLink to="/Artikler">
             <img src={arrow} alt="arrow" />
+          </NavLink>
         </div>
         </div>
     </div>

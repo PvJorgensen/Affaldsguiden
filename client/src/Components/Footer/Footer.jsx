@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './footer.module.scss'
 import Apps from '../../assets/Images/AppStores.png'
 import some from '../../assets/Images/SocialMedias.png'
+
 export const Footer = () => {
   return (
     <footer className={styles.footer}>

@@ -6,7 +6,6 @@
     display: grid;
     grid-template-columns: 1fr 1.7fr;
     max-height: 700px;
-    margin-bottom: 5%;
     .imgWrapper {
         img {
             width: 100%;
@@ -23,6 +22,9 @@
     }
     .botText {
         padding: 40px;
+        img {
+            cursor: pointer;
+        }
         h2 {
             margin-bottom: 5%;
         }

@@ -3,6 +3,7 @@ import { useSupabase } from '../../Providers/SupabaseProvider';
 import styles from './newsbox.module.scss';
 import backgroundImg from '../../assets/Images/Paintbuckets.png';
 import arrow from '../../assets/Arrow.png'
+import { NavLink } from 'react-router-dom';
 
 export const NewsBox = () => {
   const [articles, setArticles] = useState([]);
@@ -37,7 +38,7 @@ export const NewsBox = () => {
               <section key={item.id} className={styles.articleSection}>
                 <h3>{item.title}</h3>
                 <p>{item.teaser}</p>
-                <img src={arrow} alt="" />
+                <NavLink to="/Artikler"><img src={arrow} alt="" /></NavLink>
               </section>
             ))
           }
