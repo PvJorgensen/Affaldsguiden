@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ContentWrapperStyle = styled.div`
     // background: linear-gradient(180deg, hsla(144, 89%, 22%, 1) 4%, hsla(0, 0%, 100%, 1) 100%);
     background: linear-gradient(to bottom, #${props => props.$bgcolor || '119B1E'}, #fff);
-    background-size: 100% 700px;
+    background-size: 100% 750px;
     background-repeat: no-repeat;
     width: 100%;
     margin: auto;
