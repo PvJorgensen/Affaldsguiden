@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from './contentwrapper.module.scss'
+import { ContentWrapperStyle } from './ContentWrapper.styled';
 
-export const ContentWrapper = ({title, subtitle, description, children}) => {
+export const ContentWrapper = ({title, subtitle, description, bgcolor, children}) => {
     document.title = title;
 
     if (description) {
@@ -9,15 +9,14 @@ export const ContentWrapper = ({title, subtitle, description, children}) => {
             .querySelector('meta[name="description"]')
             .setAttribute('content', description)
     }
+    
   return (
-    <>
-    <div className={styles.contentWrapper}>
-      <div className={styles.contentHolder}>
-    <h1>{title}</h1>
-    {subtitle && <h2 className={styles.subTitle}>{subtitle}</h2>}
-    <div>{children}</div>
+    <ContentWrapperStyle $bgcolor={bgcolor}>
+      <div>
+        <h1>{title}</h1>
+        {subtitle && <h2>{subtitle}</h2>}
+        <div>{children}</div>
       </div>
-    </div>
-    </>
+    </ContentWrapperStyle>
   )
 }

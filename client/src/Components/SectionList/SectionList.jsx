@@ -1,34 +1,36 @@
 import { useEffect, useState } from "react";
 import { useSupabase } from "../../Providers/SupabaseProvider";
-import styles from './sortcat.module.scss';
+import styles from './sectionlist.module.scss';
 import { Link } from 'react-router-dom';
+import { ContentWrapper } from "../ContentWrapper/ContentWrapper";
 
-export const SortCategory = () => {
-    const [category, setCategory] = useState([]);
+export const SectionList = () => {
+    const [sectionList, setSectionList] = useState([]);
     const { supabase } = useSupabase();
   
-    const getCategory = async () => {
+    const getSectionList = async () => {
         if (supabase) {
             const { data, error } = await supabase
                 .from("trash_sections")
                 .select("id, title, description, color, image_url");
             if (error) {
-                console.error("Error Loading Categories");
+                console.error("Error Loading Sections");
             } else {
-                setCategory(data);
+                setSectionList(data);
             }
         }
     };
   
     useEffect(() => {
-        getCategory();
+        getSectionList();
     }, [supabase]);
   
     return (
+        <ContentWrapper title="Sorteringssguide" subtitle="Vælg en sektion">
         <div className={styles.sectionWrapper}>
-            {category &&
-                category.map((item) => (
-                    <Link to={`/category/${item.id}`} key={item.id} className={styles.sections}>
+            {sectionList &&
+                sectionList.map((item) => (
+                    <Link to={`./${item.id}`} key={item.id} className={styles.sections}>
                         <div style={{ backgroundColor: `#${item.color}` }}>
                             <h3>{item.title}</h3>
                         </div>
@@ -36,5 +38,6 @@ export const SortCategory = () => {
                     </Link>
                 ))}
         </div>
+        </ContentWrapper>
     );
 };
