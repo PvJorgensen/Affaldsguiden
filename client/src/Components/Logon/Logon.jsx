@@ -25,7 +25,7 @@ export const Logon = () => {
       setLoginData(data)
       setTimeout(() => {
         navigate('/')
-      }, 3000)
+      }, 0)
     }
   }
 

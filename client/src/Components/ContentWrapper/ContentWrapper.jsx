@@ -14,7 +14,7 @@ export const ContentWrapper = ({title, subtitle, description, bgcolor, children}
     <ContentWrapperStyle $bgcolor={bgcolor}>
       <div>
         <h1>{title}</h1>
-        {subtitle && <h2>{subtitle}</h2>}
+        {subtitle && <h2 className='contentHtwo'>{subtitle}</h2>}
         <div>{children}</div>
       </div>
     </ContentWrapperStyle>

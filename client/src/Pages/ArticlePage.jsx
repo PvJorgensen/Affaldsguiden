@@ -1,8 +1,8 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-export const TrashGuidePage = () => {
+export const ArticlePage = () => {
   return (
-      <Outlet />
+    <Outlet />
   )
 }

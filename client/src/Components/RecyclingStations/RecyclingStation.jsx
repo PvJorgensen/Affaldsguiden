@@ -43,7 +43,7 @@ export const RecyclingStation = () => {
         if (supabase) {
             const { data: reviewsData, error: reviewsError } = await supabase
                 .from("reviews")
-                .select("id, comment, num_stars");
+                .select("id, num_stars");
 
             if (reviewsError) {
                 console.error("Error Loading Reviews");

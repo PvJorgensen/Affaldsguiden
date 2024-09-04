@@ -1,0 +1,23 @@
+.linkBox {
+    color: black;
+    .articles {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        padding: 60px 60px 0px 60px;
+        gap: 2rem;
+        div {
+            img {
+                width: 312px;
+                max-height: 186px;
+            }
+        }
+        .rightSection {
+            display: grid;
+            grid-template-rows: 1.5fr 2fr 1fr;
+            .readMore {
+                color: #1A3636;
+            }
+        }
+    }
+    
+}

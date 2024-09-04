@@ -1,0 +1,21 @@
+.articleWrapper {
+    padding: 30px;
+    .articleDetails {
+        section {
+            white-space: pre-line;
+            h3 {
+                margin-bottom: 20px;
+            }
+            h4 {
+                margin-bottom: 20px;
+                color: #119B1E;
+            }
+            .date {
+                margin-bottom: 20px;
+            }
+            img {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
