@@ -1,0 +1,29 @@
+.orderWrapper {
+    padding: 60px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    section {
+        margin-bottom: 20px;
+        h2 {
+            color: #119B1E;
+        }
+    }
+    .boxWrapper {
+        border: 1px solid lightgray;
+        background-color: white;
+        height: 128px;
+        width: 128px;
+        border-radius: 8px;
+        p {
+            font-size: 14px;
+            text-align: center;
+            width: 100%;
+        }
+        div {
+            text-align: center;
+            margin-top: 15px;
+        }
+    }
+    }

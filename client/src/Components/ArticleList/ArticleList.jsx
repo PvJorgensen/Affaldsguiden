@@ -35,7 +35,7 @@ export const ArticleList = () => {
     <ContentWrapper className={styles.articleWrapper} title="Artikler" >
         {articledata &&
             articledata.slice(0, 6).map((item) =>(
-                <div className={styles.linkBox}>
+                <div className={styles.linkBox} key={item.id}>
                 <article className={styles.articles}>
                     <div>
                         <img src={item.image_url} alt="" />
