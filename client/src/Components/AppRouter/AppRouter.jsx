@@ -9,6 +9,8 @@ import { SectionList } from '../SectionList/SectionList';
 import { CategoryList } from '../CategoryList/CategoryList';
 import { ArticleList } from '../ArticleList/ArticleList';
 import { ArticleDetails } from '../ArticleDetails/ArticleDetails';
+import { StationList } from '../RecyclingStations/StationList';
+import { StationDetails } from '../StationDetails/StationDetails';
 
 export const AppRouter = () => {
     return (
@@ -18,11 +20,17 @@ export const AppRouter = () => {
             <Route index element={<SectionList />}></Route>
             <Route path=':section_id' element={<CategoryList />}></Route>
           </Route>
-          <Route path='/Genbrugsstationer' element={<Genbrugsstation />} />
+
+          <Route path='/Genbrugsstationer' element={<Genbrugsstation />}>
+            <Route index element={<StationList />}></Route>
+            <Route path=':station_id' element={<StationDetails />}></Route>
+          </Route>
+
           <Route path='/Artikler' element={<ArticlePage />}>
             <Route index element={<ArticleList />}></Route>
             <Route path=':article_id' element={<ArticleDetails />}></Route>
           </Route>
+
           <Route path='/Bestil' element={<Bestil />} />
           <Route path='/Login' element={<Login />} />
       </Routes>

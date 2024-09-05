@@ -1,0 +1,36 @@
+.commentWrapper {
+    padding: 20px;
+    h2 {
+        color: #119B1E;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .topBox {
+        display: flex;
+        justify-content: space-between;
+        div {
+            font-size: 20px;
+            color: #FFA500;
+        }
+    }
+    .textBox {
+        textarea {
+            width: 100%;
+            height: 150px;
+            resize: none;
+        }
+    }
+    .BtnContainer {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        button {
+            width: 6%;
+            border-radius: 7px;
+            border: none;
+            padding: 5px;
+            background-color: #119B1E;
+            color: white;
+        }
+    }
+}

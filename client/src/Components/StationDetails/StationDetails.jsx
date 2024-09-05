@@ -1,35 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { useSupabase } from '../../Providers/SupabaseProvider';
-import styles from './station.module.scss';
+import styles from './stationdetails.module.scss';
 import maptest from '../../assets/maptest.png';
+import { useParams } from 'react-router-dom';
+import { ContentWrapper } from '../ContentWrapper/ContentWrapper';
+import { Comments } from '../Comments/Comments';
+import { StarRating } from '../../Utils/StarRating';
 
 // Star Rating Component
-const StarRating = ({ rating }) => {
-    const maxStars = 5;
-    const filledStars = Math.round(rating); // Round the rating to the nearest integer
-    const stars = [];
-
-    for (let i = 1; i <= maxStars; i++) {
-        if (i <= filledStars) {
-            stars.push(<span key={i}>&#9733;</span>); // Filled star (★)
-        } else {
-            stars.push(<span key={i}>&#9734;</span>); // Empty star (☆)
-        }
-    }
-
-    return <div>{stars}</div>;
-};
-
-export const RecyclingStation = () => {
+export const StationDetails = () => {
     const [stations, setStations] = useState([]);
     const { supabase } = useSupabase();
-
+    const { station_id } = useParams()
     // Fetch stations
     const getStation = async () => {
         if (supabase) {
             const { data, error } = await supabase
                 .from("recycling_sites")
-                .select("id, name, zipcode, city, country, email, phone, longitude, latitude");
+                .select("id, name, address, zipcode, city, country, email, phone, longitude, latitude")
+                .eq('id', station_id)
+                .single()
             if (error) {
                 console.error("Error Loading Stations");
             } else {
@@ -71,22 +61,25 @@ export const RecyclingStation = () => {
     }, [stations]);
 
     return (
-        <div className={styles.stations}>
-            {stations &&
-            stations.map((item) => (
-                <div key={item.id} className={styles.stationWrapper}>
-                    <section className={styles.map}>
+        <ContentWrapper>
+                <div className={styles.detailsWrapper}>
+                    <section className={styles.mapBox}>
                         <img src={maptest} alt="map" />
                     </section>
-                    <section className={styles.info}>
-                        <h3>{item.name}</h3>
-                        <p>{item.zipcode} - {item.city}</p>
+                    <div className={styles.infoWrapper}>
+                    <section>
+                        <h3>{stations.name}</h3>
+                        <p>{stations.address}</p>
+                        <p>{stations.zipcode} {stations.city}</p>
+                        <p>{stations.email}</p>
+                        <p>{stations.phone}</p>
                     </section>
-                    <section className={styles.rating}>
-                        <StarRating rating={item.averageRating} />
+                    <section className={styles.ratingWrapper}>
+                        <StarRating rating={stations.averageRating} />
                     </section>
+                    </div>
                 </div>
-            ))}
-        </div>
+                <Comments />
+        </ContentWrapper>
     );
 };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSupabase } from "../../Providers/SupabaseProvider";
-// import styles from './sortcat.module.scss';
+import styles from './categorylist.module.scss';
 import { Link, useParams } from 'react-router-dom';
 import { ContentWrapper } from "../ContentWrapper/ContentWrapper";
 
@@ -50,12 +50,15 @@ export const CategoryList = () => {
         <ContentWrapper title={sectionDetails.title} subtitle='Vælg en kategori' bgcolor={sectionDetails.color}>
             {categoryList &&
                 categoryList.map((item) => (
-                    <Link to={`/category/${item.id}`} key={item.id}>
-                        <div style={{ backgroundColor: `#${item.color}` }}>
+                    <div key={item.id} className={styles.categoryList}>
+                        <section className={styles.contentBox}>
                             <h3>{item.title}</h3>
-                        </div>
+                        </section>
+                        <section className={styles.imgWrapper}>
                         <img src={item.image_url} alt={item.title} />
-                    </Link>
+                        </section>
+                    </div>
+                    
                 ))}
         </ContentWrapper>
     );

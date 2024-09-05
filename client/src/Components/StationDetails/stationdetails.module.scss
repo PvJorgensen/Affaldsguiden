@@ -1,0 +1,23 @@
+.detailsWrapper {
+    width: 100%;
+    .mapBox {
+        img {
+            width: 100%;
+        }
+    }
+    .infoWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+        h3 {
+            font-size: 3rem;
+            font-weight: 300;
+        }
+    }
+    .ratingWrapper {
+        display: flex;
+        justify-content: flex-end;
+        color: #FFA500;
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,23 @@
+.categoryList {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #677D6A;
+    margin-bottom: 40px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px 8px 0px 0px;
+    margin-top: 20px;
+    .contentBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 80px;
+        margin-top: 40px;
+    }
+    .imgWrapper {
+        display: flex;
+        justify-content: end;
+        margin-right: 30px;
+    }
+}
