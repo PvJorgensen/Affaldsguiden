@@ -1,29 +1,79 @@
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .orderWrapper {
     padding: 60px;
-    width: 50%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
     gap: 2rem;
-    section {
-        margin-bottom: 20px;
-        h2 {
-            color: #119B1E;
-        }
+    flex-wrap: wrap;
+}
+
+.containerWrapper {
+    border: 1px solid lightgray;
+    background-color: white;
+    height: 128px;
+    width: 128px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer; /* Add cursor pointer for better UX */
+    transition: background-color 0.3s ease; /* Smooth transition */
+
+    &:hover {
+        background-color: #D8EADB; /* Background color on hover */
     }
-    .boxWrapper {
-        border: 1px solid lightgray;
-        background-color: white;
-        height: 128px;
-        width: 128px;
-        border-radius: 8px;
-        p {
-            font-size: 14px;
-            text-align: center;
-            width: 100%;
-        }
-        div {
-            text-align: center;
-            margin-top: 15px;
-        }
+
+    &.active {
+        background-color: #677D6A; /* Background color when active */
+        color: white; /* Optional: change text color when active */
     }
+
+    p {
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
     }
+
+    div {
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+
+.formWrapper {
+    width: 50%;
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
