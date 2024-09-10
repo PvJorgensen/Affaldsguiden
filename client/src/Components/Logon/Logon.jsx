@@ -6,57 +6,83 @@ import { useSupabase } from '../../Providers/SupabaseProvider'
 import styles from './logon.module.scss'
 
 export const Logon = () => {
-  const { supabase } = useSupabase()
-  const { loginData, setLoginData } = useAuth()
-  const navigate = useNavigate()
-  const { register, handleSubmit,formState: { errors },} = useForm()
+  const { supabase } = useSupabase() // Giver mig adgang til min backend
+  const { loginData, setLoginData } = useAuth() //Henter og opdatere login-data fra AuthProvider
+  const navigate = useNavigate() // Bruges  til at navigere når formen bliver sumbittet
+  const { register, handleSubmit, formState: { errors } } = useForm() // håndtere formularens tilstand og validereing
+  const [loginError, setLoginError] = useState(null) // Kontrollere om der skal sendes fejl besked eller ikke
 
-  const handleLogin = async ({ email, password }) => {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
 
-    if (error) {
-      console.error("error logging in:", error)
-    } else {
-      console.log("logged in", data)
-      sessionStorage.setItem("supabase.auth.token", JSON.stringify(data))
-      setLoginData(data)
-      setTimeout(() => {
-        navigate('/')
-      }, 0)
-    }
+const handleLogin = async ({ email, password }) => {
+  // Forsøg at logge brugeren ind med Supabase
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  })
+
+  if (error) {
+    // Log fejlmeddelelse til konsol og vis bruger en fejlmeddelelse
+    console.error("error logging in:", error)
+    setLoginError("Login fejlede. Tjek din email og password.") // Sæt fejlmeddelelse
+  } else {
+    // Login var succesfuld
+    console.log("logged in", data)
+    // Gem autentificeringstoken i sessionStorage
+    sessionStorage.setItem("supabase.auth.token", JSON.stringify(data))
+    // Opdater login-data i AuthProvider
+    setLoginData(data)
+    // Ryd fejlmeddelelse
+    setLoginError(null)
+    // Naviger til forsiden
+    setTimeout(() => {
+      navigate('/')
+    }, 0)
   }
+}
 
-  return (
-    <>
-      {!loginData || !loginData.user ? (
-        <form onSubmit={handleSubmit(handleLogin)} className={styles.loginWrapper}>
-            <section className={styles.loginBox}>
+
+return (
+  <>
+    {/* Hvis brugeren ikke er logget ind, vis login-formularen */}
+    {!loginData || !loginData.user ? (
+      <form onSubmit={handleSubmit(handleLogin)} className={styles.loginWrapper}>
+        <section className={styles.loginBox}>
           <div>
             <h2>Login</h2>
-            <input placeholder='Indtast din email' type="email" id="email"
-              {...register("email", { required: true })}
+            <input 
+              placeholder='Indtast din email' 
+              type="email" 
+              id="email"
+              {...register("email", { required: true })} // Registrer inputfeltet med React Hook Form
             />
+            {/* Vis fejlmeddelelse, hvis email-feltet ikke er udfyldt */}
             {errors.email && <span>This field is required</span>}
           </div>
           <div>
-            <input placeholder='Indtast dit password' type="password" id="password"
-              {...register("password", { required: true })}
+            <input 
+              placeholder='Indtast dit password' 
+              type="password" 
+              id="password"
+              {...register("password", { required: true })} // Registrer inputfeltet med React Hook Form
             />
+            {/* Vis fejlmeddelelse, hvis password-feltet ikke er udfyldt */}
             {errors.password && <span>This field is required</span>}
           </div>
+
+          {/* Vis login-fejlmeddelelse, hvis der er nogen */}
+          {loginError && <div className={styles.errorMessage}>{loginError}</div>}
+          
           <div className={styles.loginContainer}>
-            <button type="submit">LOGIN</button>
+            <button type="submit">LOGIN</button> {/* Login-knap */}
           </div>
-            <div className={styles.assets}>
-                <p>Opret en bruger</p>
-                <p>Glemt password</p>
-            </div>
-          </section>
-        </form>
-      ) : null}
-    </>
-  )
+          <div className={styles.assets}>
+            <p>Opret en bruger</p> {/* Link til oprettelse af bruger */}
+            <p>Glemt password</p> {/* Link til password-recovery */}
+          </div>
+        </section>
+      </form>
+    ) : null} {/* Hvis brugeren er logget ind, vis ikke login-formularen */}
+  </>
+)
+
 }
