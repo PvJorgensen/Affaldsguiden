@@ -26,7 +26,6 @@ const handleLogin = async ({ email, password }) => {
     setLoginError("Login fejlede. Tjek din email og password.") // Sæt fejlmeddelelse
   } else {
     // Login var succesfuld
-    console.log("logged in", data)
     // Gem autentificeringstoken i sessionStorage
     sessionStorage.setItem("supabase.auth.token", JSON.stringify(data))
     // Opdater login-data i AuthProvider
