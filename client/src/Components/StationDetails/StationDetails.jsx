@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { ContentWrapper } from '../ContentWrapper/ContentWrapper';
 import { Comments } from '../Comments/Comments';
 import { StarRating } from '../../Utils/StarRating';
+import { GetComments } from '../GetComments/GetComments';
 
 // Star Rating Component
 export const StationDetails = () => {
@@ -80,6 +81,7 @@ export const StationDetails = () => {
                     </div>
                 </div>
                 <Comments />
+                <GetComments />
         </ContentWrapper>
     );
 };
